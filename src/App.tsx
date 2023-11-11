@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import AuthRoutes from "./module/Auth/routes";
+import AuthRoutes from "./modules/Auth/routes";
+import "./app.scss";
+import { ThemeProvider, createTheme } from "@mui/material";
 
 const App: FC = () => {
 	const router = createBrowserRouter([
@@ -15,7 +17,17 @@ const App: FC = () => {
 		},
 	]);
 
-	return <RouterProvider router={router} />;
+	const theme = createTheme({
+		typography: {
+			fontFamily: "Nunito Sans, sans-serif",
+		},
+	});
+
+	return (
+		<ThemeProvider theme={theme}>
+			<RouterProvider router={router} />
+		</ThemeProvider>
+	);
 };
 
 export default App;
