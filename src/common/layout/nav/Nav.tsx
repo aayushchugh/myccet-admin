@@ -6,7 +6,7 @@ const Nav: FC = () => {
 	return (
 		<nav className="flex">
 			<Link to="/">
-				<img src={logo} alt="logo" className="max-h-32 max-w-32" />
+				<img src={logo} alt="logo" className="h-20 md:h-32 w-20 md:w-32" />
 			</Link>
 		</nav>
 	);

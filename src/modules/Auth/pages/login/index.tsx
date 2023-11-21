@@ -32,13 +32,20 @@ const LoginPage: FC = () => {
 	};
 
 	return (
-		<main className="flex items-center justify-center">
-			<div className="flex items-center shadow-xl rounded-lg">
-				<div className="w-1/2">
-					<img src={loginImg} alt="side" className="w-[80%] h-auto" />
+		<div className="flex items-center justify-center">
+			<div className="flex flex-col md:flex-row items-center justify-center rounded-lg md:w-[80%] md:shadow-xl">
+				<div className="w-full md:w-1/2">
+					<img
+						src={loginImg}
+						alt="side"
+						className="hidden md:block mb-8 md:mb-0 md:w-[80%] h-[40vh] md:h-[60vh] lg:h-[70vh]"
+					/>
 				</div>
-				<form className="w-[45%] flex-col" onSubmit={onSubmitHandler}>
-					<Typography variant="h1" className="!text-2xl !mb-8">
+				<form
+					className="md:w-1/2 flex-col px-10 items-center justify-center"
+					onSubmit={onSubmitHandler}
+				>
+					<Typography variant="h1" className="!text-xl md:!text-2xl !mb-8 text-center">
 						Welcome Back!
 					</Typography>
 
@@ -71,10 +78,12 @@ const LoginPage: FC = () => {
 						Forgot Password
 					</Typography>
 
-					<Button loading={isLoginLoading}>Login</Button>
+					<Button loading={isLoginLoading} className="!mb-8 w-full">
+						Login
+					</Button>
 				</form>
 			</div>
-		</main>
+		</div>
 	);
 };
 
