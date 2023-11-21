@@ -1,0 +1,9 @@
+@keyframes loadingAnimation {
+	to {
+		transform: scale(1.15) translateY(-1rem);
+	}
+}
+
+.loading {
+	animation: loadingAnimation 1s infinite ease alternate;
+}

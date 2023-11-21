@@ -1,8 +1,8 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
-import loginImg from "../../../assets/images/background/login.jpg";
+import loginImg from "../../../../assets/images/background/login.jpg";
 import { TextField, Typography } from "@mui/material";
-import Button from "../../../common/components/Button";
-import { PostLoginData, postLoginApi } from "../api/authApi";
+import Button from "../../../../common/components/Button";
+import { PostLoginData, postLoginApi } from "../../api/authApi";
 import { useNavigate } from "react-router-dom";
 
 const LoginPage: FC = () => {
@@ -32,7 +32,7 @@ const LoginPage: FC = () => {
 	};
 
 	return (
-		<main className="flex items-center justify-center h-screen">
+		<main className="flex items-center justify-center">
 			<div className="flex items-center shadow-xl rounded-lg">
 				<div className="w-1/2">
 					<img src={loginImg} alt="side" className="w-[80%] h-auto" />

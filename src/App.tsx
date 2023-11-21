@@ -1,22 +1,13 @@
-import { FC } from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import AuthRoutes from "./modules/Auth/routes";
+import { FC, Suspense, lazy } from "react";
 import "./app.scss";
 import { ThemeProvider, createTheme } from "@mui/material";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./common/layout";
+import LoadingIndicator from "./common/layout/loadingIndicator";
+
+const LoginPage = lazy(() => import("./modules/Auth/pages/login"));
 
 const App: FC = () => {
-	const router = createBrowserRouter([
-		//TODO: redirect to login if not authenticated
-		{
-			path: "/",
-			element: <div>Home</div>,
-		},
-		{
-			path: "/auth",
-			children: AuthRoutes,
-		},
-	]);
-
 	const theme = createTheme({
 		typography: {
 			fontFamily: "Nunito Sans, sans-serif",
@@ -25,7 +16,15 @@ const App: FC = () => {
 
 	return (
 		<ThemeProvider theme={theme}>
-			<RouterProvider router={router} />
+			<Suspense fallback={<LoadingIndicator />}>
+				<BrowserRouter>
+					<Routes>
+						<Route path="/" element={<Layout />}>
+							<Route path="/login" element={<LoginPage />} />
+						</Route>
+					</Routes>
+				</BrowserRouter>
+			</Suspense>
 		</ThemeProvider>
 	);
 };
