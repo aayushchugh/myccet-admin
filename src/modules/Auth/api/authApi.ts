@@ -1,4 +1,4 @@
-import API, { APIResponseSuccess } from "../../../common/api";
+import API, { APIResponseSuccess } from "../../../common/api/API";
 
 export interface PostLoginData {
 	email: string;
