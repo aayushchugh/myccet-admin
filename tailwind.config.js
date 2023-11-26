@@ -4,12 +4,14 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: "#346DAC",
+				primary: "#346CAC",
+				secondary: "#ba2121",
 			},
 			fontFamily: {
 				"nunito-sans": ["Nunito Sans", "sans-serif"],
 			},
 		},
-},
+	},
+
 	plugins: [],
 };

@@ -10,7 +10,18 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 
 const SideDrawer: FC = () => {
 	return (
-		<Drawer variant="permanent">
+		<Drawer
+			variant="permanent"
+			anchor="left"
+			sx={{
+				width: 200,
+				flexShrink: 0,
+				"& .MuiDrawer-paper": {
+					width: 200,
+					boxSizing: "border-box",
+				},
+			}}
+		>
 			<div className="bg-primary h-full px-3">
 				<List>
 					<ListItem>
@@ -26,25 +37,35 @@ const SideDrawer: FC = () => {
 				<Divider className="bg-white/70" />
 
 				<List>
-					<ListItem className="items-center hover:bg-white/20 hover:rounded transition-all duration-75 cursor-pointer">
-						<PersonOutlinedIcon className="text-white" />
-						<Typography className="!ml-2 text-white">Students</Typography>
+					<ListItem className="hover:bg-white/20 hover:rounded transition-all duration-75 cursor-pointer">
+						<Link to="/students" className="flex items-center">
+							<PersonOutlinedIcon className="text-white" />
+							<Typography className="!ml-2 text-white">Students</Typography>
+						</Link>
 					</ListItem>
-					<ListItem className="items-center hover:bg-white/20 hover:rounded transition-all duration-75 cursor-pointer">
-						<WorkOutlineIcon className="text-white" />
-						<Typography className="!ml-2 text-white">Faculty</Typography>
+					<ListItem className="hover:bg-white/20 hover:rounded transition-all duration-75 cursor-pointer">
+						<Link to="/faculty" className="flex items-center">
+							<WorkOutlineIcon className="text-white" />
+							<Typography className="!ml-2 text-white">Faculty</Typography>
+						</Link>
 					</ListItem>
-					<ListItem className="items-center hover:bg-white/20 hover:rounded transition-all duration-75 cursor-pointer">
-						<SchoolOutlinedIcon className="text-white" />
-						<Typography className="!ml-2 text-white">Courses</Typography>
+					<ListItem className="hover:bg-white/20 hover:rounded transition-all duration-75 cursor-pointer">
+						<Link to="/courses" className="flex items-center">
+							<SchoolOutlinedIcon className="text-white" />
+							<Typography className="!ml-2 text-white">Courses</Typography>
+						</Link>
 					</ListItem>
-					<ListItem className="items-center hover:bg-white/20 hover:rounded transition-all duration-75 cursor-pointer">
-						<ApartmentIcon className="text-white" />
-						<Typography className="!ml-2 text-white">Departments</Typography>
+					<ListItem className="hover:bg-white/20 hover:rounded transition-all duration-75 cursor-pointer">
+						<Link to="/departments" className="flex items-center">
+							<ApartmentIcon className="text-white" />
+							<Typography className="!ml-2 text-white">Departments</Typography>
+						</Link>
 					</ListItem>
-					<ListItem className="items-center hover:bg-white/20 hover:rounded transition-all duration-75 cursor-pointer">
-						<LibraryBooksOutlinedIcon className="text-white" />
-						<Typography className="!ml-2 text-white">Subjects</Typography>
+					<ListItem className="hover:bg-white/20 hover:rounded transition-all duration-75 cursor-pointer">
+						<Link to="/subjects" className="flex items-center">
+							<LibraryBooksOutlinedIcon className="text-white" />
+							<Typography className="!ml-2 text-white">Subjects</Typography>
+						</Link>
 					</ListItem>
 				</List>
 			</div>
