@@ -2,10 +2,10 @@ import { FC, Suspense, lazy } from "react";
 import "./app.scss";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Layout from "./common/layout/Layout";
-import LoadingIndicator from "./common/layout/loadingIndicator/LoadingIndicator";
+import Layout from "./layout/Layout";
+import LoadingIndicator from "./layout/loadingIndicator/LoadingIndicator";
 
-const LoginPage = lazy(() => import("./modules/Auth/pages/login/Login"));
+const LoginPage = lazy(() => import("./pages/auth/login/Login"));
 
 const App: FC = () => {
 	const theme = createTheme({

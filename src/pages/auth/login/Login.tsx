@@ -1,11 +1,11 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
-import loginImg from "../../../../assets/images/background/login.jpg";
+import loginImg from "../../../assets/images/background/login.jpg";
 import { TextField, Typography } from "@mui/material";
-import Button from "../../../../common/components/Button/Button";
-import { PostLoginData, postLoginApi } from "../../api/authApi";
+import Button from "../../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import logo from "../../../../assets/images/logos/full.png";
+import logo from "../../../assets/images/logos/full.png";
+import { PostLoginData, postLoginApi } from "../../../api/API";
 
 const LoginPage: FC = () => {
 	const navigate = useNavigate();

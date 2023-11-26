@@ -1,5 +1,5 @@
 import { FC } from "react";
-import logo from "../../../assets/images/logos/icon.png";
+import logo from "../../assets/images/logos/icon.png";
 import styles from "./style.module.scss";
 import { Typography } from "@mui/material";
 
