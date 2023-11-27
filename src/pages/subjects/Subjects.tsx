@@ -11,50 +11,45 @@ import { FC } from "react";
 import Button from "../../components/Button/Button";
 import AddIcon from "@mui/icons-material/Add";
 
-const columns = [
-	{ name: "title", label: "title" },
-	{ name: "code", label: "code" },
-];
-
 const subjectData = [
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
-	{ title: "Physics", code: 1234 },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush", "Aditya"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush", "Aditya"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush", "Aditya"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
+	{ title: "Physics", code: 1234, semester: 3, teacher: ["Ayush"] },
 ];
 
 const Subjects: FC = () => {
@@ -73,13 +68,17 @@ const Subjects: FC = () => {
 						<TableRow>
 							<TableCell>Title</TableCell>
 							<TableCell>Code</TableCell>
+							<TableCell>Semester</TableCell>
+							<TableCell>Teacher</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
 						{subjectData.map((subject, i) => (
-							<TableRow hover key={i}>
+							<TableRow hover key={i} className="cursor-pointer">
 								<TableCell>{subject.title}</TableCell>
 								<TableCell>{subject.code}</TableCell>
+								<TableCell>{subject.semester}</TableCell>
+								<TableCell>{subject.teacher.join(", ")}</TableCell>
 							</TableRow>
 						))}
 					</TableBody>
