@@ -1,6 +1,6 @@
 import { ChangeEvent, FC, FormEvent, useState } from "react";
 import loginImg from "../../../assets/images/background/login.jpg";
-import { TextField, Typography } from "@mui/material";
+import { FormControl, TextField, Typography } from "@mui/material";
 import Button from "../../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -60,27 +60,31 @@ const LoginPage: FC = () => {
 							Welcome Back!
 						</Typography>
 
-						<TextField
-							label="Email"
-							type="email"
-							name="email"
-							placeholder="email@example.com"
-							className="!mb-8"
-							onChange={onChangeHandler}
-							required
-							fullWidth
-						/>
+						<FormControl fullWidth required>
+							<TextField
+								label="Email"
+								type="email"
+								name="email"
+								placeholder="email@example.com"
+								className="!mb-8"
+								onChange={onChangeHandler}
+								required
+								fullWidth
+							/>
+						</FormControl>
 
-						<TextField
-							label="Password"
-							type="password"
-							name="password"
-							placeholder="strong password"
-							className="!mb-5"
-							onChange={onChangeHandler}
-							required
-							fullWidth
-						/>
+						<FormControl fullWidth required>
+							<TextField
+								label="Password"
+								type="password"
+								name="password"
+								placeholder="strong password"
+								className="!mb-5"
+								onChange={onChangeHandler}
+								required
+								fullWidth
+							/>
+						</FormControl>
 
 						<Typography
 							variant="subtitle2"
