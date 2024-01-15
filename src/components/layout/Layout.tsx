@@ -7,7 +7,8 @@ const Layout: FC = () => {
 	return (
 		<AntLayout rootClassName="min-h-screen" hasSider>
 			<SideBar />
-			<AntLayout>
+
+			<AntLayout style={{ marginLeft: 200 }}>
 				<AntLayout.Header className="bg-white flex items-center justify-end">
 					<Flex justify="end" align="center">
 						{/* TODO: get name from API */}
@@ -16,7 +17,8 @@ const Layout: FC = () => {
 						</Typography.Title>
 					</Flex>
 				</AntLayout.Header>
-				<AntLayout.Content style={{ margin: "0 16px" }}>
+
+				<AntLayout.Content className="p-5">
 					<Outlet />
 				</AntLayout.Content>
 			</AntLayout>
