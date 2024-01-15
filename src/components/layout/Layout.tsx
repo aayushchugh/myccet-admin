@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Layout as AntLayout, Flex, Typography } from "antd";
-import SideBar from "./components/sideBar/SideBar";
+import SideBar from "./sideBar/SideBar";
 import { Outlet } from "react-router-dom";
 
 const Layout: FC = () => {

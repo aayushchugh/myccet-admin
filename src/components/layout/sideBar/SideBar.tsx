@@ -1,6 +1,6 @@
 import { Divider, Flex, Layout, Menu } from "antd";
 import { FC, useState } from "react";
-import logo from "../../../../assets/images/logos/icon.png";
+import logo from "../../../assets/images/logos/icon.png";
 import { MenuItemType } from "antd/es/menu/hooks/useItems";
 import { GoPerson } from "react-icons/go";
 import { PiSuitcaseSimple } from "react-icons/pi";
